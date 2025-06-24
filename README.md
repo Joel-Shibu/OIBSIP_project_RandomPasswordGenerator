@@ -3,7 +3,6 @@
 A secure and user-friendly password generator application built with Python and Tkinter. This project was developed as part of an internship program to demonstrate modern Python GUI development and secure password generation techniques.
 
 ![Password Generator Screenshot](RandomPasswordGenerator.png)
-![Password Generator video](RandomPasswordGenerator_vid.mp4)
 
 
 ## ✨ Features

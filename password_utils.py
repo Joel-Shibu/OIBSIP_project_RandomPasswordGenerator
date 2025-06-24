@@ -31,7 +31,6 @@ def generate_password(
     if length > 64:
         raise ValueError("Password length cannot exceed 64 characters")
     
-    # Define character sets
     char_sets = []
     if use_uppercase:
         char_sets.append(string.ascii_uppercase)
@@ -45,16 +44,13 @@ def generate_password(
     if not char_sets:
         raise ValueError("At least one character set must be selected")
     
-    # Ensure at least one character from each selected set
     password = []
     for char_set in char_sets:
         password.append(secrets.choice(char_set))
     
-    # Fill the rest of the password
     all_chars = ''.join(char_sets)
     password.extend(secrets.choice(all_chars) for _ in range(length - len(password)))
     
-    # Shuffle the password to mix the required characters
     secrets.SystemRandom().shuffle(password)
     
     return ''.join(password)
@@ -78,7 +74,6 @@ def get_password_strength(password: str) -> str:
     has_digit = any(c.isdigit() for c in password)
     has_symbol = any(not c.isalnum() for c in password)
     
-    # Calculate strength score
     score = 0
     if length >= 8: score += 1
     if length >= 12: score += 1
@@ -87,7 +82,6 @@ def get_password_strength(password: str) -> str:
     if has_digit: score += 1
     if has_symbol: score += 1
     
-    # Determine strength level
     if length < 4 or score < 2:
         return 'Very Weak'
     elif score < 4:

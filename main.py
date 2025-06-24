@@ -10,26 +10,22 @@ class PasswordGeneratorApp:
         self.root.geometry("400x500")
         self.root.resizable(False, False)
         
-        # Configure colors
         self.bg_color = "#f0f2f5"
         self.card_bg = "#ffffff"
         self.primary_color = "#4a6cf7"
         self.text_color = "#333333"
         self.checkbox_bg = "#f8f9fa"
         self.border_color = "#e1e4e8"
-        
-        # Set window background
+    
         self.root.configure(bg=self.bg_color)
         
-        # Main container with padding
         self.main_frame = tk.Frame(root, bg=self.bg_color, padx=30, pady=30)
         self.main_frame.pack(fill=tk.BOTH, expand=True)
         
-        # Title
         title_font = tkfont.Font(family='Segoe UI', size=20, weight='bold')
         self.title_label = tk.Label(
             self.main_frame,
-            text="🔐 Random Password Generator",
+            text=" Random Password Generator",
             font=title_font,
             bg=self.bg_color,
             fg=self.text_color,
@@ -37,7 +33,6 @@ class PasswordGeneratorApp:
         )
         self.title_label.pack(fill=tk.X)
         
-        # Card frame
         self.card = tk.Frame(
             self.main_frame,
             bg=self.card_bg,
@@ -48,7 +43,6 @@ class PasswordGeneratorApp:
         )
         self.card.pack(fill=tk.BOTH, expand=True, pady=(10, 0))
         
-        # Password length control
         self.length_frame = tk.Frame(self.card, bg=self.card_bg)
         self.length_frame.pack(fill=tk.X, pady=(0, 15))
         
@@ -61,7 +55,6 @@ class PasswordGeneratorApp:
         )
         self.length_label.pack(side=tk.LEFT, anchor='w')
         
-        # Password length value display
         self.length_value = tk.StringVar(value="12")
         self.length_display = tk.Entry(
             self.length_frame,
@@ -77,15 +70,12 @@ class PasswordGeneratorApp:
         )
         self.length_display.pack(side=tk.RIGHT, padx=5)
         
-        # Character set checkboxes
         self.checkbox_frame = tk.Frame(self.card, bg=self.card_bg)
         self.checkbox_frame.pack(fill=tk.X, pady=10)
         
-        # Checkbox style
         self.checkbox_bg = self.card_bg
         self.checkbox_fg = self.text_color
         
-        # Uppercase checkbox
         self.uppercase_var = tk.BooleanVar(value=True)
         self.uppercase_cb = tk.Checkbutton(
             self.checkbox_frame,
@@ -101,7 +91,6 @@ class PasswordGeneratorApp:
         )
         self.uppercase_cb.pack(fill=tk.X, pady=2)
         
-        # Lowercase checkbox
         self.lowercase_var = tk.BooleanVar(value=True)
         self.lowercase_cb = tk.Checkbutton(
             self.checkbox_frame,
@@ -117,7 +106,6 @@ class PasswordGeneratorApp:
         )
         self.lowercase_cb.pack(fill=tk.X, pady=2)
         
-        # Numbers checkbox
         self.numbers_var = tk.BooleanVar(value=True)
         self.numbers_cb = tk.Checkbutton(
             self.checkbox_frame,
@@ -133,7 +121,6 @@ class PasswordGeneratorApp:
         )
         self.numbers_cb.pack(fill=tk.X, pady=2)
         
-        # Symbols checkbox
         self.symbols_var = tk.BooleanVar(value=True)
         self.symbols_cb = tk.Checkbutton(
             self.checkbox_frame,
@@ -149,7 +136,6 @@ class PasswordGeneratorApp:
         )
         self.symbols_cb.pack(fill=tk.X, pady=2)
         
-        # Generate button
         self.generate_btn = tk.Button(
             self.card,
             text="Generate Password",
@@ -166,11 +152,9 @@ class PasswordGeneratorApp:
         )
         self.generate_btn.pack(fill=tk.X, pady=(20, 15))
         
-        # Password display frame
         self.password_frame = tk.Frame(self.card, bg=self.card_bg)
         self.password_frame.pack(fill=tk.X, pady=(0, 15))
         
-        # Password entry
         self.password_var = tk.StringVar()
         self.password_entry = tk.Entry(
             self.password_frame,
@@ -187,10 +171,8 @@ class PasswordGeneratorApp:
         )
         self.password_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 10))
         
-        # Set initial empty password
         self.password_var.set("")
-        
-        # Copy button
+    
         self.copy_btn = tk.Button(
             self.password_frame,
             text="Copy to Clipboard",
@@ -208,7 +190,6 @@ class PasswordGeneratorApp:
         )
         self.copy_btn.pack(side=tk.RIGHT)
         
-        # Bind length validation
         self.length_value.trace('w', self.validate_length)
     
     def validate_length(self, *args):
