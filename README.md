@@ -27,7 +27,7 @@ A secure and user-friendly password generator application built with Python and 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Joel-Shibu/OIBSIP_project_RandomPasswordGenerator.git
+   git clone https://github.com/Joel-Shibu/RandomPasswordGenerator
    cd RandomPasswordGenerator
    ```
 
