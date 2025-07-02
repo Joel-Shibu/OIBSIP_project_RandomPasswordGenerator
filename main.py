@@ -7,7 +7,7 @@ class PasswordGeneratorApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Random Password Generator")
-        self.root.geometry("400x500")
+        self.root.geometry("450x500")
         self.root.resizable(False, False)
         
         self.bg_color = "#f0f2f5"
@@ -25,7 +25,7 @@ class PasswordGeneratorApp:
         title_font = tkfont.Font(family='Segoe UI', size=20, weight='bold')
         self.title_label = tk.Label(
             self.main_frame,
-            text=" Random Password Generator",
+            text="Random Password Generator",
             font=title_font,
             bg=self.bg_color,
             fg=self.text_color,
@@ -184,8 +184,9 @@ class PasswordGeneratorApp:
             font=('Segoe UI', 9),
             bd=1,
             relief='solid',
-            padx=10,
-            pady=5,
+            padx=16,
+            pady=7,
+            width=18,
             cursor="hand2"
         )
         self.copy_btn.pack(side=tk.RIGHT)
