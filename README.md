@@ -54,6 +54,3 @@ A secure and user-friendly password generator application built with Python and 
 This application uses Python's built-in `secrets` module for cryptographically secure random number generation, ensuring that all generated passwords are secure and unpredictable.
 
 
----
-
-Developed during the OIBSIP Internship Program
